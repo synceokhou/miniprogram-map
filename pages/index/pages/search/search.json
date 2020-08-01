@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "搜索指定网点",
+  "usingComponents": {
+    "mp-loading": "../../components/loading/loading"
+  }
+}

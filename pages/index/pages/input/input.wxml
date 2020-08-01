@@ -1,0 +1,39 @@
+<mp-form-page title="查找指定网点" subtitle="您可以使用以下多种条件组合，搜索您指定类型的网点。">
+	<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+
+		<mp-cells title="网点名称" footer="">
+			<mp-cell prop="name" title="网点名称" ext-class="">
+				<input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="输入关键字或留空" />
+			</mp-cell>
+		</mp-cells>
+
+		<mp-cells title="所属银行与所在地市">
+			<mp-cell ext-class="weui-cell_select weui-cell_select-after">
+				<view slot="title" class="weui-label">所属银行</view>
+				<picker bindchange="bindBankChange" value="{{bankIndex}}" range="{{bankArray}}">
+					<view class="weui-select">{{bankArray[bankIndex]}}</view>
+				</picker>
+			</mp-cell>
+			<mp-cell ext-class="weui-cell_select weui-cell_select-after">
+				<view slot="title" class="weui-label">所在地市</view>
+				<picker bindchange="bindCityChange" value="{{cityIndex}}" range="{{cityArray}}">
+					<view class="weui-select">{{cityArray[cityIndex]}}</view>
+				</picker>
+			</mp-cell>
+		</mp-cells>
+
+		<mp-cells title="办理业务类型">
+			<mp-checkbox-group prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+				<mp-checkbox wx:for="{{checkboxItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+			</mp-checkbox-group>
+		</mp-cells>
+
+	</mp-form>
+
+	<view slot="button">
+		<button class="weui-btn" type="primary" bindtap="submitForm">搜索</button>
+	</view>
+	<mp-dialog title="提示" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+		<view>必须选择办理业务类型</view>
+	</mp-dialog>
+</mp-form-page>

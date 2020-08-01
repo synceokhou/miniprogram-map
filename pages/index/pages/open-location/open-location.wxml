@@ -1,0 +1,38 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{name}}</view>
+        <view class="page__desc">网点详情</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">所属银行</view>
+                    <view class="weui-form-preview__value_in-hd">{{bank}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">所在地市</view>
+                    <view class="weui-form-preview__value">{{city}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">详细位置</view>
+                    <view class="weui-form-preview__value">{{address}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">联系电话</view>
+                    <view class="weui-form-preview__value">{{phone}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">办理业务</view>
+                    <view class="weui-form-preview__value">{{busniess}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="openLocation">打开地图</view>
+            </view>
+        </view>
+    </view>
+</view>
+

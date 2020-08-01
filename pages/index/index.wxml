@@ -1,0 +1,28 @@
+<view class="index">
+  <view class="index-hd">
+    <image class="index-logo" src="resources/kind/logo.png"></image>
+    <view class="index-desc">以下包含搜索指定网点、查看附近办理外汇对公及对私业务网点等功能。您可以搜索指定网点的相关信息，若您无特殊要求，试试查看附近可办理业务的网点。</view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <navigator url="pages/{{page.path}}/{{page.path}}" class="navigator">
+                  <view class="navigator-text">{{page.name}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

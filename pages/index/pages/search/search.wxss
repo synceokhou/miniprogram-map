@@ -1,0 +1,5 @@
+@import '../../../common/common.wxss';
+
+.weui-panel_margin {
+  margin-bottom: 20rpx;
+}
